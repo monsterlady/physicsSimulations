@@ -76,7 +76,7 @@ var sketchProc = function(processingInstance) {
         // Restart all the Mover objects randomly
         var resetMovers = function() {
             for (var i = 0; i < 3; i++) {
-                movers[i] = new Mover(random(0.5, width),random(0.5, height),10);
+                movers[i] = new Mover(random(0.5, width),random(0.5, height),30);
             }
         };
 
