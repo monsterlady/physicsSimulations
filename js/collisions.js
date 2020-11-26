@@ -17,7 +17,7 @@ var sketchProc = function(processingInstance) {
         Mover.prototype = Object.create(Mover.prototype);
         Mover.prototype.constructor = Mover;
 
-        Mover.prototype.pengzhuang = function (mover) {
+        Mover.prototype.collision = function (mover) {
             if(this.position.dist(mover.position) <= mover.radius + this.radius){
                 console.log("Collision Happened ! ");
                 //TODO handle
@@ -56,7 +56,7 @@ var sketchProc = function(processingInstance) {
 
             for (var i=0; i<movers.length; i++){
                 for (var j=i+1; j<movers.length; j++){
-                    movers[i].pengzhuang(movers[j]);
+                    movers[i].collision(movers[j]);
                 }
             }
 
@@ -76,7 +76,7 @@ var sketchProc = function(processingInstance) {
         // Restart all the Mover objects randomly
         var resetMovers = function() {
             for (var i = 0; i < 3; i++) {
-                movers[i] = new Mover(random(0.5, width),random(0.5, height),30);
+                movers[i] = new Mover(random(0.5, width),random(0.5, height),10);
             }
         };
 
